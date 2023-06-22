@@ -15,9 +15,11 @@ public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @NotEmpty
     @Size(min = 1, max = 100)
     private String name;
+
     @NotEmpty
     private String description;
 

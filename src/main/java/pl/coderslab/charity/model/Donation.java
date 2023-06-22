@@ -30,18 +30,21 @@ public class Donation {
 
     @ManyToOne
     private Institution institutions;
+
     @NotEmpty
     private String street;
+
     @NotEmpty
     private String city;
+
     @NotEmpty
     private String zipCode;
-
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
     private LocalTime pickUpTime;
+
     @NotEmpty
     private String pickUpComment;
 
