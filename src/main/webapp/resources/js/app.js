@@ -177,16 +177,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
       form.querySelectorAll('input[name="institutions"]').forEach(input => {
         if (input.checked) {
-          institution.textContent = input.nextElementSibling.nextElementSibling.firstElementChild.textContent;
+          institution.textContent = "Dla: " +input.nextElementSibling.nextElementSibling.firstElementChild.textContent;
         }
       })
       address[0].innerHTML = form.querySelector('input[name="street"]').value;
-      address[1].innerHTML = form.querySelector('input[name="city"]').value;
-      address[2].innerHTML = form.querySelector('input[name="zipCode"]').value;
+      address[1].innerHTML = form.querySelector('input[name="zipCode"]').value;
+      address[2].innerHTML = form.querySelector('input[name="city"]').value;
 
       pickUpDetails[0].innerHTML = form.querySelector('input[name="pickUpDate"]').value;
       pickUpDetails[1].innerHTML = form.querySelector('input[name="pickUpTime"]').value;
-      pickUpDetails[2].innerHTML = form.querySelector('textarea[name="pickUpComment"]').value;
+      pickUpDetails[2].innerHTML = "Uwagi: " + form.querySelector('textarea[name="pickUpComment"]').value;
 
     }
   }
