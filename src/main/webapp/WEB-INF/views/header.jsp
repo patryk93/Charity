@@ -33,6 +33,3 @@
             <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
-</header>
-</body>
-</html>

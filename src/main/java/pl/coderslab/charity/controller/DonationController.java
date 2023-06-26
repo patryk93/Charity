@@ -4,13 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
+import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.service.create.CategoryService;
 import pl.coderslab.charity.service.create.DonationService;
 import pl.coderslab.charity.service.create.InstitutionService;
@@ -33,17 +31,13 @@ public class DonationController {
     }
 
     @PostMapping("/donationForm")
-    public String addSave(@Valid Donation donation, BindingResult result) {
+    public String addSave(@Valid Donation donation, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "form";
         }
-        donationService.save(donation);
-        return "redirect:/formConfirmation";
-    }
 
-    @GetMapping("/formConfirmation")
-    public String showConfirmationPage() {
-        return "form_confirmation";
+        donationService.save(donation);
+        return "form-confirmation";
     }
 
     @ModelAttribute("categories")

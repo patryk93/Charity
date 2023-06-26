@@ -164,9 +164,37 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
-    }
+      const quantityValue = form.querySelector('input[name="quantity"]').value;
+      let categoryArr = [];
 
+
+      form.querySelectorAll('input[name="categoryId"]').forEach(input => {
+        if(input.checked) {
+          categoryArr.push(input.nextElementSibling.nextElementSibling.textContent);
+        }
+      })
+      categories.textContent = "Liczba worków: " + quantityValue;
+
+      form.querySelectorAll('input[name="institutions"]').forEach(input => {
+        if (input.checked) {
+          institution.textContent = input.nextElementSibling.nextElementSibling.firstElementChild.textContent;
+        }
+      })
+      address[0].innerHTML = form.querySelector('input[name="street"]').value;
+      address[1].innerHTML = form.querySelector('input[name="city"]').value;
+      address[2].innerHTML = form.querySelector('input[name="zipCode"]').value;
+
+      pickUpDetails[0].innerHTML = form.querySelector('input[name="pickUpDate"]').value;
+      pickUpDetails[1].innerHTML = form.querySelector('input[name="pickUpTime"]').value;
+      pickUpDetails[2].innerHTML = form.querySelector('textarea[name="pickUpComment"]').value;
+
+    }
   }
+  const categories = document.querySelectorAll(".summary--text")[0];
+  const institution = document.querySelectorAll(".summary--text")[1];
+  const address = document.querySelector(".summary").children[1].children[0].children[1].children;
+  const pickUpDetails = document.querySelector(".summary").children[1].children[1].children[1].children;
+
   const form = document.querySelector(".form--steps");
   if (form !== null) {
     new FormSteps(form);
