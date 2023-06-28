@@ -1,36 +1,28 @@
 package pl.coderslab.charity.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.charity.dto.RegisterDTO;
 import pl.coderslab.charity.model.User;
-import pl.coderslab.charity.repository.UserRepository;
-import org.mindrot.jbcrypt.BCrypt;
 import pl.coderslab.charity.service.RegisterService;
 import pl.coderslab.charity.service.UserService;
 
 import javax.validation.Valid;
 
 @Controller
-@RequiredArgsConstructor
 public class RegisterController {
     private static final String REGISTER = "register";
+    private final UserService userService;
+    private final RegisterService registerService;
 
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private RegisterService registerService;
-
-    public RegisterController(UserService userService) {
+    public RegisterController(UserService userService, RegisterService registerService) {
         this.userService = userService;
+        this.registerService = registerService;
     }
 
     @GetMapping("/register")

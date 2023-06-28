@@ -1,5 +1,6 @@
 package pl.coderslab.charity.service;
 
+import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,14 +10,16 @@ import pl.coderslab.charity.model.UserLoginData;
 import pl.coderslab.charity.repository.UserLoginDataRepository;
 import pl.coderslab.charity.repository.UserRepository;
 
+
+@RequiredArgsConstructor
 @Service
 public class RegisterService {
 
-    @Autowired
-    private UserLoginDataRepository userLoginDataRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserLoginDataRepository userLoginDataRepository;
+
+
+    private final UserRepository userRepository;
 
     public void register(RegisterDTO form) {
         String email = form.getEmail();
