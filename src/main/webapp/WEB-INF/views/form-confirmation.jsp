@@ -11,7 +11,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
-<body><jsp:include page="header.jsp"/>
+<body><jsp:include page="header-logged.jsp"/>
 
     <div class="slogan container container--90">
         <h2>
