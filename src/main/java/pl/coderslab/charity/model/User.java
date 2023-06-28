@@ -31,4 +31,7 @@ public class User {
 
     private int enabled;
 
+    public User() {
+    }
+
 }

@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
-import pl.coderslab.charity.repository.DonationRepository;
-import pl.coderslab.charity.service.create.CategoryService;
-import pl.coderslab.charity.service.create.DonationService;
-import pl.coderslab.charity.service.create.InstitutionService;
+import pl.coderslab.charity.service.CategoryService;
+import pl.coderslab.charity.service.DonationService;
+import pl.coderslab.charity.service.InstitutionService;
 
 import javax.validation.Valid;
 import java.util.List;
