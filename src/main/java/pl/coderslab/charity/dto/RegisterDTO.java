@@ -25,23 +25,4 @@ public class RegisterDTO {
     @NotNull (message = "Pole nie może być puste") @Size(min = 3, message = "Imię musi być dłuższe niż 3 znaki" )
     private String lastName;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RegisterDTO that = (RegisterDTO) o;
-        return
-                Objects.equals(email, that.email) &&
-                Objects.equals(password, BCrypt.hashpw(that.password,BCrypt.gensalt())) &&
-                Objects.equals(confirmedPassword, that.confirmedPassword) &&
-                Objects.equals(firstName, that.firstName) &&
-                Objects.equals(lastName, that.lastName);
-    }
-    
-    @Override
-    public int hashCode() {
-        return Objects.hash( email, password, confirmedPassword, firstName, lastName);
-    }
-
-
 }

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
-<jsp:include page="header-logged.jsp"/>
+<jsp:include page="header-logged-form.jsp"/>
 
 <div class="slogan container container--90">
     <div class="slogan--item">

@@ -14,6 +14,9 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    private static final String INDEX = "index";
+    private static final String LOGGED = "logged";
+
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
@@ -28,9 +31,20 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String homeAction(Model model){
-        model.addAttribute("countQuantities", donationService.countQuantities());
-        model.addAttribute("countDonations", donationService.countDonations());
-        return "index";
+    public String getIndex(Model model){
+        Integer countQuantities = donationService.countQuantities();
+        Integer countDonations = donationService.countDonations();
+        model.addAttribute("countQuantities", countQuantities);
+        model.addAttribute("countDonations", countDonations);
+        return INDEX;
+    }
+
+    @RequestMapping("/logged")
+    public String getLogged(Model model){
+        Integer countQuantities = donationService.countQuantities();
+        Integer countDonations = donationService.countDonations();
+        model.addAttribute("countQuantities", countQuantities);
+        model.addAttribute("countDonations", countDonations);
+        return LOGGED;
     }
 }

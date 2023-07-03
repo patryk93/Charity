@@ -19,14 +19,8 @@ public class DonationService {
     }
 
 
-    public Integer countQuantities() {
-        Integer sum = donationRepository.countQuantities();
-        if (sum==null){
-            sum = 0;
-        }
-        return sum;
+    public Integer countQuantities() { return donationRepository.countQuantities();
     }
-
 
     public Integer countDonations(){
         return donationRepository.countDonations();

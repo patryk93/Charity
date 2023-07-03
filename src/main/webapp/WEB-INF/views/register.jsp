@@ -13,27 +13,32 @@
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="header-form.jsp"/>
 <section class="login-page">
     <h2>Załóż konto</h2>
     <form:form action="/register" modelAttribute="registerForm" method="post" class="padding-small text-center">
+    <div class="form-group">
+        <form:input class="form-group" path="email" id="email" placeholder="Email"/><br/>
+        <form:errors path="email"/>
+    </div>
         <div class="form-group">
-            <input type="email" name="email" placeholder="Email" />
+            <form:input class="form-group" path="firstName" id="firstName" placeholder="Imię"/><br/>
+            <form:errors path="firstName"/>
         </div>
         <div class="form-group">
-            <input type="text" name="firstName" placeholder="Imię" />
+            <form:input class="form-group" path="lastName" id="lastName" placeholder="Nazwisko"/><br/>
+            <form:errors path="lastName"/>
         </div>
         <div class="form-group">
-            <input type="text" name="lastName" placeholder="Nazwisko" />
+            <form:password class="form-group" path="password" id="password" placeholder="Hasło"/><br/>
+            <form:errors path="password"/>
         </div>
         <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło" />
-        </div>
-        <div class="form-group">
-            <input type="password" name="confirmedPassword" placeholder="Powtórz hasło" />
+            <form:password class="form-group" path="confirmedPassword" id="confirmedPassword" placeholder="Powtórz hasło"/><br/>
+            <form:errors path="confirmedPassword"/>
         </div>
         <div class="form-group form-group--buttons">
-            <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
+            <a href="/login" class="btn btn--without-border">Zaloguj się</a>
             <button class="btn" type="submit">Załóż konto</button>
         </div>
     </form:form>
