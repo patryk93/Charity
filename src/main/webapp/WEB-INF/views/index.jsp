@@ -113,8 +113,8 @@
                     <li>
                 </c:if>
                 <div class="col">
-                    <div class="title">${institution.name}</div>
-                    <div class="subtitle">${institution.description}</div>
+                    <div class="title">Fundacja ${institution.name}</div>
+                    <div class="subtitle">Cel: ${institution.description}</div>
                 </div>
                 <c:if test="${count.count % 2 == 0}">
                     </li>

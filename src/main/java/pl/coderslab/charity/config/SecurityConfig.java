@@ -29,7 +29,7 @@ public class SecurityConfig {
                                             AuthenticationSuccessHandler loginSuccessHandler) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/logged/donationForm/*", "/logged/*").authenticated()
+                .antMatchers("/logged/*", "/donation/*").authenticated()
                 .antMatchers("/admins/*").hasRole("ADMIN")
                 .antMatchers("/logged/*").hasRole("USER")
                 .and().formLogin()

@@ -22,7 +22,7 @@ import java.util.List;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("logged")
+@RequestMapping("donation")
 public class DonationController {
 
     private final CategoryService categoryService;
