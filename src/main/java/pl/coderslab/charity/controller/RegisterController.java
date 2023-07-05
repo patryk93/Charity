@@ -52,7 +52,7 @@ public class RegisterController {
             return "register";
         }
         User user = userMapper.toModel(userDTO);
-        userService.saveUser(user);
+        userService.createUser(user);
 
         return "index";
     }

@@ -1,4 +1,4 @@
-package pl.coderslab.charity.config;
+package pl.coderslab.charity;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

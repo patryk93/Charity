@@ -1,4 +1,4 @@
-package pl.coderslab.charity.config;
+package pl.coderslab.charity;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
