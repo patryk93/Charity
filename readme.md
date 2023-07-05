@@ -17,7 +17,7 @@ Main page:
 Register page:
 ![Screenshot from 2023-07-05 19-14-26](https://github.com/patryk93/Charity/assets/26244379/acbaecfb-c1f0-4f2b-8eb3-ecc5e6a57680)
 
-Loging page: 
+Login page: 
 ![image](https://github.com/patryk93/Charity/assets/26244379/b757062c-b657-455f-ad04-20cb55846303)
 
 Form of giving donation (working only on logged user):
